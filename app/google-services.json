@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "943920619376",
+    "firebase_url": "https://password-authentication-test-2.firebaseio.com",
+    "project_id": "password-authentication-test-2",
+    "storage_bucket": "password-authentication-test-2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:943920619376:android:648d6abae703b1e75539b5",
+        "android_client_info": {
+          "package_name": "com.example.passwordauthentication2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "943920619376-gsiji8e3721038omb8h9841rqs7aim5h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4OY9N5xZERpdgZzpP-B5UZHOA9i2ws3c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "943920619376-gsiji8e3721038omb8h9841rqs7aim5h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

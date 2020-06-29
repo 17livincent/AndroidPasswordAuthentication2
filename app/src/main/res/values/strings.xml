@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Password Authentication 2</string>
+    <string name="button_login">Login</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_pw">Password</string>
+    <string name="prompt_verify_pw">Verify password</string>
+    <string name="info_signup">Tap here to\ncreate an account.</string>
+    <string name="prompt_display_name">Display name</string>
+    <string name="button_register">Register</string>
+    <string name="label_sign_up">Sign Up</string>
+    <string name="label_login">Login</string>
+    <string name="button_sign_out">Sign Out</string>
+</resources>
