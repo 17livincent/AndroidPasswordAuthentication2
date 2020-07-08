@@ -4,8 +4,11 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -41,5 +44,18 @@ public class ViewProfileActivity extends AppCompatActivity {
         email.setText(user.getEmail());
     }
 
+    private void deleteAccount() {
+        user.delete();
+        Toast.makeText(ViewProfileActivity.this, "Account deleted.", Toast.LENGTH_SHORT).show();
+    }
+
+    public void onClick(View view) {
+        int i = view.getId();
+        if(i == R.id.textView_delete_account) {
+            // reauthenticate
+
+            // delete account
+        }
+    }
 
 }

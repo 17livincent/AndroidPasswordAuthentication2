@@ -38,13 +38,6 @@ public class SignUpActivity extends AppCompatActivity {
         dnField = findViewById(R.id.editText_display_name);
     }
 
-    private void hideKeyboard(View view) {
-        if (view != null) {
-            InputMethodManager imm = (InputMethodManager)view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
-            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-        }
-    }
-
     private void createAccount(String email, String password) {
         FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -73,7 +66,7 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     public void onClick(View view) {
-        hideKeyboard(view);
+        Utilities.hideKeyboard(view);
         int i = view.getId();
         String email = emailField.getText().toString().trim();
         String pw1 = pwField1.getText().toString().trim();

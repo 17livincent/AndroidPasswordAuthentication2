@@ -69,7 +69,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void onClick(View view) {
-        hideKeyboard(view);
+        Utilities.hideKeyboard(view);
         String email = emailField.getText().toString().trim();
         String pw = pwField.getText().toString().trim();
         int i = view.getId();

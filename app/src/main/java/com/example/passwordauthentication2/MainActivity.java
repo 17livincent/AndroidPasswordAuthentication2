@@ -46,13 +46,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void hideKeyboard(View view) {
-        if (view != null) {
-            InputMethodManager imm = (InputMethodManager)view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
-            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-        }
-    }
-
     private void signOut() {
         FirebaseAuth.getInstance().signOut();
     }
@@ -64,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick(View view) {
-        hideKeyboard(view);
+        Utilities.hideKeyboard(view);
         int i = view.getId();
 
     }
