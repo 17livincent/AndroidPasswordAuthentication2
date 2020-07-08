@@ -1,10 +1,14 @@
 package com.example.passwordauthentication2;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
@@ -15,7 +19,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
-    public TextView status;
+    public Toolbar toolbar;
 
     private FirebaseUser user;
 
@@ -23,16 +27,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // set up toolbar
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
     }
 
     @Override
     public void onStart() {
         super.onStart();
 
-        status = findViewById(R.id.textView_user_desc);
         // check if a user is signed in
         user = FirebaseAuth.getInstance().getCurrentUser();
-        updateStatus();
         if(user == null) {  // go to login activity
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
@@ -56,23 +63,38 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void updateStatus() {
-        if(user == null) {
-            status.setText("No one is logged in.");
-        }
-        else {
-            String s = "";
-            s += user.getDisplayName() + "\n" + user.getEmail();
-            status.setText(s);
-        }
-    }
-
     public void onClick(View view) {
         hideKeyboard(view);
         int i = view.getId();
         if(i == R.id.button_sign_out) {
             signOut();
             refresh();
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int i = item.getItemId();
+        if(i == R.id.menu_view_profile) {
+            // go to view profile activity
+
+            return true;
+        }
+        else if(i == R.id.menu_sign_out) {
+            // sign out
+            signOut();
+            refresh();
+            return true;
+        }
+        else {
+            return super.onOptionsItemSelected(item);
         }
     }
 }

@@ -12,12 +12,10 @@
         <activity
             android:name=".SignUpActivity"
             android:label="@string/label_sign_up"
-            android:parentActivityName="com.example.passwordauthentication2.LoginActivity">
-        </activity>
+            android:parentActivityName=".LoginActivity" />
         <activity
             android:name=".LoginActivity"
-            android:label="@string/label_login">
-        </activity>
+            android:label="@string/label_login" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

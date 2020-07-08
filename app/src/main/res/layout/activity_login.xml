@@ -11,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:text="@string/prompt_email"
         android:textSize="18sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/editText_email"
@@ -22,6 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:text="@string/prompt_pw"
         android:textSize="18sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/editText_pw"
@@ -34,6 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:ems="10"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,10 +48,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:ems="10"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView_title" />
 
     <Button
         android:id="@+id/button_login"
@@ -68,11 +72,37 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:clickable="true"
+        android:focusable="false"
         android:onClick="onClick"
         android:text="@string/info_signup"
         android:textAlignment="center"
+        android:gravity="center_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_login"
         tools:text="@string/info_signup" />
+
+    <TextView
+        android:id="@+id/textView_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/title_login"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        tools:text="@string/title_login" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2"
+        app:srcCompat="@android:drawable/sym_def_app_icon" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

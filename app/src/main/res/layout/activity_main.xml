@@ -4,17 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:id="@+id/activity_main"
+    tools:openDrawer="start">
 
     <TextView
         android:id="@+id/textView_user_desc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="TextView"
+        android:text="@string/title_main_activity"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:text="@string/title_main_activity" />
 
     <Button
         android:id="@+id/button_sign_out"
@@ -27,4 +31,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:text="@string/button_sign_out" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
