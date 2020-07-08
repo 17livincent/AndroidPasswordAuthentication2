@@ -18,4 +18,5 @@
     <string name="title_main_activity">Main Activity</string>
     <string name="title_login">Welcome back</string>
     <string name="title_sign_up">Create an account</string>
+    <string name="label_profile">My Profile</string>
 </resources>

@@ -66,10 +66,7 @@ public class MainActivity extends AppCompatActivity {
     public void onClick(View view) {
         hideKeyboard(view);
         int i = view.getId();
-        if(i == R.id.button_sign_out) {
-            signOut();
-            refresh();
-        }
+
     }
 
     @Override
@@ -84,7 +81,8 @@ public class MainActivity extends AppCompatActivity {
         int i = item.getItemId();
         if(i == R.id.menu_view_profile) {
             // go to view profile activity
-
+            Intent intent = new Intent(this, ViewProfileActivity.class);
+            startActivity(intent);
             return true;
         }
         else if(i == R.id.menu_sign_out) {

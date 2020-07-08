@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ViewProfileActivity"
+            android:label="@string/label_profile"
+            android:parentActivityName=".MainActivity"/>
+        <activity
             android:name=".SignUpActivity"
             android:label="@string/label_sign_up"
             android:parentActivityName=".LoginActivity" />
