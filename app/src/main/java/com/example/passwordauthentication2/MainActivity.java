@@ -3,16 +3,12 @@ package com.example.passwordauthentication2;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -41,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         // check if a user is signed in
         user = FirebaseAuth.getInstance().getCurrentUser();
         if(user == null) {  // go to login activity
-            Intent intent = new Intent(this, LoginActivity.class);
+            Intent intent = new Intent(this, LoginOptionsActivity.class);
             startActivity(intent);
         }
     }

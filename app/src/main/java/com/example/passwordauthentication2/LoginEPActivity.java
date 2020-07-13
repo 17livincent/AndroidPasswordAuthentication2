@@ -1,15 +1,11 @@
 package com.example.passwordauthentication2;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -17,12 +13,11 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginEPActivity extends AppCompatActivity {
 
     public EditText emailField;
     public EditText pwField;
@@ -32,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_login_ep);
 
         emailField = findViewById(R.id.editText_email);
         pwField = findViewById(R.id.editText_pw);
@@ -55,14 +50,14 @@ public class LoginActivity extends AppCompatActivity {
                             // set user
                             user = FirebaseAuth.getInstance().getCurrentUser();
                             // alert
-                            Toast.makeText(LoginActivity.this, "Authentication succeeded.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginEPActivity.this, "Authentication succeeded.", Toast.LENGTH_SHORT).show();
                             // go back to main activity
-                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            Intent intent = new Intent(LoginEPActivity.this, MainActivity.class);
                             startActivity(intent);
                         }
                         else {
                             // If sign in fails, display a message to the user.
-                            Toast.makeText(LoginActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginEPActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -76,10 +71,6 @@ public class LoginActivity extends AppCompatActivity {
         if(i == R.id.button_login) {    // login
             if(!email.matches("") && !pw.matches(""))
                 signIn(email, pw);
-        }
-        else if(i == R.id.textView_sign_up) {   // go to signup activity
-            Intent intent = new Intent(this, SignUpActivity.class);
-            startActivity(intent);
         }
     }
 }

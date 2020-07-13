@@ -10,16 +10,30 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".SignUpOptionsActivity"
+            android:parentActivityName=".LoginOptionsActivity"
+            />
+        <activity
+            android:name=".LoginOptionsActivity"
+            />
+        <activity
+            android:name=".EditProfileActivity"
+            android:label="@string/edit_profile"
+            android:parentActivityName=".ViewProfileActivity"
+            />
+        <activity
             android:name=".ViewProfileActivity"
             android:label="@string/label_profile"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".SignUpActivity"
+            android:name=".SignUpEPActivity"
             android:label="@string/label_sign_up"
-            android:parentActivityName=".LoginActivity" />
+            android:parentActivityName=".SignUpOptionsActivity"
+            />
         <activity
-            android:name=".LoginActivity"
-            android:label="@string/label_login" />
+            android:name=".LoginEPActivity"
+            android:label="@string/label_login"
+            />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
