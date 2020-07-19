@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    android:onClick="onClick"
     tools:context=".LoginOptionsActivity">
 
     <Button
@@ -15,6 +18,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
+        android:fontFamily="@font/roboto"
         android:onClick="onClick"
         android:text="@string/login_option_email"
         android:textSize="18sp"
@@ -28,6 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto"
         android:text="@string/login_options"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,13 +55,28 @@
         android:id="@+id/textView_create_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/roboto"
         android:gravity="center_horizontal"
         android:onClick="onClick"
         android:text="@string/info_signup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_use_email"
+        app:layout_constraintTop_toBottomOf="@+id/google_sign_in_button"
         tools:text="@string/info_signup" />
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/google_sign_in_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_use_email" />
 </androidx.constraintlayout.widget.ConstraintLayout>

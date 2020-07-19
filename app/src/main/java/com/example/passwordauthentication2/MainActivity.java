@@ -74,6 +74,11 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             return true;
         }
+        else if(i == R.id.menu_settings) {
+            // go to settings page
+
+            return true;
+        }
         else if(i == R.id.menu_sign_out) {
             // sign out
             signOut();
